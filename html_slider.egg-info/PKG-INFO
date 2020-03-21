@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: html-slider
+Version: 1
+Summary: static html slider generator for images
+Home-page: https://github.com/evidlo/html_slider
+Author: Evan Widloski
+Author-email: evan@evanw.org
+License: GPLv3
+Description: # html_slider
+        
+            x = np.random.random((5, 5, 100, 100))
+            html_slider(x, labels=['a', 'b']
+        
+Keywords: static slider html numpy image
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown

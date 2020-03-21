@@ -1,0 +1,9 @@
+README.md
+setup.py
+html_slider/__init__.py
+html_slider/html_slider.py
+html_slider.egg-info/PKG-INFO
+html_slider.egg-info/SOURCES.txt
+html_slider.egg-info/dependency_links.txt
+html_slider.egg-info/requires.txt
+html_slider.egg-info/top_level.txt

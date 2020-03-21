@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+         .pixelated {{
+             image-rendering:optimizeSpeed;             /* Legal fallback */
+             image-rendering:-moz-crisp-edges;          /* Firefox        */
+             image-rendering:-o-crisp-edges;            /* Opera          */
+             image-rendering:-webkit-optimize-contrast; /* Safari         */
+             image-rendering:optimize-contrast;         /* CSS3 Proposed  */
+             image-rendering:crisp-edges;               /* CSS4 Proposed  */
+             image-rendering:pixelated;                 /* CSS4 Proposed  */
+             -ms-interpolation-mode:nearest-neighbor;   /* IE8+           */
+         }}
+         input {{
+             width: {imsize}px;
+         }}
+        </style>
+    </head>
+
+    <img width={imsize} class="pixelated" id="img">
+
+    <br>
+
+    {slider_html}
+
+    <script defer>
+     var sliders = Array.from(document.getElementsByClassName("slider"));
+     var ranges = Array.from(document.getElementsByClassName("range"));
+
+     function update() {{
+        var slider_vals = sliders.map(e => {{return e.value}})
+        var filename = slider_vals.join("") + ".bmp"
+        slider_vals.forEach(function(val, i){{
+        ranges[i].innerHTML = val;
+        }});
+        document.getElementById("img").src = "{output_dir}/" + filename;
+        console.log(filename);
+     }};
+
+     function showVal(newVal) {{
+         update();
+     }};
+
+     update();
+
+    </script>
+
+</html>
