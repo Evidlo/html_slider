@@ -30,13 +30,14 @@
      var ranges = Array.from(document.getElementsByClassName("range"));
 
      function update() {{
-        var slider_vals = sliders.map(e => {{return e.value}})
-        var filename = slider_vals.join("") + ".bmp"
-        slider_vals.forEach(function(val, i){{
-        ranges[i].innerHTML = val;
-        }});
-        document.getElementById("img").src = "{output_dir}/" + filename;
-        console.log(filename);
+         var slider_vals = {slider_js};
+         var slider_positions = sliders.map(e => {{return e.value}})
+         var filename = slider_positions.join("") + ".bmp"
+         slider_positions.forEach(function(pos, i){{
+             ranges[i].innerHTML = slider_vals[i][pos];
+         }});
+         document.getElementById("img").src = "{output_dir}/" + filename;
+         console.log(filename);
      }};
 
      function showVal(newVal) {{
